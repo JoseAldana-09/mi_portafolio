@@ -1,0 +1,83 @@
+/* src/styles/database.css */
+
+.database-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.database-background {
+  background: url('/public/images/Fondo2.jpg') no-repeat center center fixed; /* Imagen de fondo */
+  background-size: cover;
+}
+
+.database-container {
+  max-width: 1200px; /* Ajusta el ancho para más columnas */
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive; /* Fuente divertida */
+}
+
+.database-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Comic Sans MS', cursive; /* Fuente divertida para el título */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  color: #c7d409;
+}
+
+.database-page .database-container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.database-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center; /* Centrar las tarjetas */
+}
+
+.database-card {
+  flex: 1 1 calc(23% - 1rem); /* Cuatro columnas */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo con transparencia */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.database-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.database-img {
+  width: 100%;
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover;
+}
+
+.database-description {
+  padding: 1rem;
+  color: #ffffff; /* Texto blanco */
+}
+
+.database-description h2 {
+  font-size: 1.5rem;
+  color: #c7d409;
+  margin-bottom: 0.5rem;
+  font-family: 'Comic Sans MS', cursive; /* Fuente divertida */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+.database-description p {
+  font-size: 1rem;
+  font-family: 'Comic Sans MS', cursive; /* Fuente divertida */
+}

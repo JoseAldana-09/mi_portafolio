@@ -1,0 +1,548 @@
+/* Añadir fuentes personalizadas si es necesario */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Permanent+Marker&display=swap');
+
+/* Reseteo de márgenes y rellenos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000; /* Fondo oscuro para todo el cuerpo */
+  scroll-behavior: smooth; /* Suavizar el desplazamiento */
+}
+
+/* Fondo del inicio */ 
+.background-filter { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100vh; 
+  background: url('/public/images/fondo.jpg') no-repeat center center fixed; 
+  background-size: cover; 
+  filter: brightness(0.8) contrast(1.2) sepia(0.6) saturate(1.2) hue-rotate(-10deg); /* Filtros ajustados para un tono más oscuro y amarillo */ 
+  z-index: -1; /* Asegurarse de que esté detrás de todo el contenido */ 
+}
+
+/* Estilo principal de la aplicación */
+.App {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Estilo de la barra de navegación */
+.App-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  padding: 30px 0; /* Mantener el padding en 30px */
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+.navbar { 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  padding: 0px 20px; 
+  background-color: transparent; 
+} 
+
+.navbar .menu-icon { 
+  display: none; 
+  font-size: 30px; 
+  cursor: pointer; 
+  color: white; 
+  position: absolute;
+} 
+.contact-button a {
+  background: linear-gradient(to bottom, #4b1a3b, #125050);
+  
+  border-radius: 28px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
+  font-family: Arial, sans-serif;
+  color: #fafafa;
+  font-size: 20px; /* Ajuste de tamaño de fuente */
+  padding: 15px 25px; /* Padding ajustado */
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease; /* Transición suave */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.contact-button a:hover {
+  background: linear-gradient(to bottom, #61204c, #1f9999);
+
+  text-decoration: none;
+  transform: translateY(-5px); /* Efecto de elevación */
+}
+
+.contact-button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 2px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.nav-links { 
+  display: flex; 
+  text-decoration: none; /* Eliminar el subrayado */
+  list-style: none; 
+} 
+.nav-links li { 
+  margin: 0 20px; 
+} 
+.nav-links a { 
+  color: white; 
+  text-decoration: none; 
+  font-size: 18px; 
+} 
+.nav-links a:hover { color: #ffd700; }
+nav ul {
+  list-style-type: none; /* Eliminar viñetas de lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centrar los elementos */
+}
+
+nav ul li {
+  margin: 0 20px; /* Espacio entre los elementos */
+}
+
+nav ul li a {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Eliminar subrayado */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s; /* Transición suave en el cambio de color */
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Color dorado al pasar el ratón */
+}
+
+/* Estilo de la sección de introducción */
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Usar toda la altura de la vista */
+  padding: 20px;
+}
+
+/* Estilo del contenido de introducción */
+.intro-content {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.perfil-img {
+  margin-right: 40px; /* Más espacio a la derecha */
+  width: 250px; /* Tamaño más grande de la imagen */
+  height: 320px; /* Tamaño más grande de la imagen */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  border-radius: 20px; /* Esquinas redondeadas */
+}
+
+.intro-text {
+  text-align: left; /* Alinear el texto a la izquierda */
+  max-width: 600px;
+}
+
+.static-text {
+  font-family: 'Permanent Marker', cursive; /* Fuente estilizada */
+  font-size: 60px;
+  color: #ffd700; /* Color amarillo */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.dynamic-text {
+  font-family: 'Permanent Marker', cursive; /* Fuente estilizada */
+  font-size: 36px;
+  color: violet; /* Color violeta */
+  margin-bottom: 20px;
+  animation: fadeInOut 2s ease-in-out infinite; /* Efecto de cambio */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+/* Estilos para las secciones */
+section {
+  padding: 60px 20px;
+}
+
+.skills-section, .projects-section{
+  position: relative;
+  padding: 100px 20px; /* Espacio adicional para estas secciones */
+  background: url('/public/images/fondo.jpg') no-repeat center center fixed; 
+  background-size: cover; /* Asegurarse de que la imagen cubra toda la sección */
+}
+.skills-section h1{
+  position: relative;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive;
+  margin: 0;
+  padding: 0;
+  font-size: 25px; /* Tamaño moderado */
+  font-weight: bold; /* Hace la letra más gruesa */
+  text-shadow: 2px 2px 4px #333333; /* Sombra sutil para resaltar el texto */
+  border-bottom: 1px solid #ffffff; /* Línea más gruesa decorativa */
+  letter-spacing: 2px; /* Espaciado ligero entre letras */
+  text-transform: capitalize; /* Primera letra en mayúscula */
+}
+.skills-section::before, .projects-section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Utilizar la misma imagen de fondo */
+  filter: brightness(0.5) contrast(1.5) sepia(0.8) saturate(1.5) hue-rotate(-30deg); /* Filtro ajustado para un tono más oscuro y amarillo */
+  transition: filter 1s ease-in-out; /* Transición suave del filtro */
+}
+
+.skills-section:hover::before, .projects-section:hover::before{
+  opacity: 0.7; /* Ajustar opacidad sin cambiar colores */
+  transition: opacity 0.5s ease-in-out; /* Transición suave */
+}
+
+
+.skills-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative; /* Necesario para el pseudo-elemento ::before */
+  z-index: 0;
+}
+
+/* src/styles/App.css */
+
+.skill-card {
+  flex: 1;
+  border-radius: 1rem;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-background {
+  width: 100%;
+  height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s ease;
+}
+
+.skill-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Comic Sans MS', cursive; /* Fuente divertida */
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-title {
+  background: rgba(0, 0, 0, 0.9);
+  font-size: 1.3rem;
+}
+
+
+.skill-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.skill-card h3 {
+  margin-top: 10px;
+  color: #ffd700; /* Color amarillo */
+  font-family: 'Permanent Marker', cursive; /* Fuente estilizada */
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+.projects-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.projects-section h1 {
+  position: relative;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive;
+  margin: 0;
+  padding: 0;
+  font-size: 30px; /* Tamaño moderado */
+  font-weight: bold; /* Hace la letra más gruesa */
+  text-shadow: 2px 2px 4px #333333; /* Sombra sutil para resaltar el texto */
+  border-bottom: 1px solid #ffffff; /* Línea más gruesa decorativa */
+  letter-spacing: 2px; /* Espaciado ligero entre letras */
+  text-transform: capitalize; /* Primera letra en mayúscula */
+}
+
+
+.project-card {
+  position: relative;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente para las tarjetas de proyecto */
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover img {
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+}
+
+.project-title {
+  font-family: 'Permanent Marker', cursive;
+  color: #ffd700;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.project-description {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.project-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  color: #ffd700; /* Color del texto */
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out; /* Solo efecto de cambio de color */
+}
+
+.project-button:hover {
+  background-color: #d35400; /* Fondo naranja oscuro al pasar el mouse */
+}
+
+.project-button a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hereda el color del botón */
+  display: inline-block; /* Para aplicar el hover */
+}
+
+
+
+.contact-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #000; /* Fondo negro */
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
+  padding: 10px; /* Espacio dentro del cuadro */
+}
+
+.contact-item a {
+  color: inherit; /* Mantener el color heredado */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.contact-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-item span {
+  font-size: 18px;
+}
+
+.contact-item:hover {
+  color: #fff; /* Mantener el color blanco al pasar el cursor */
+}
+
+.contact-item span:hover {
+  text-decoration: none; /* Sin subrayado al pasar el cursor */
+}
+
+.contact-form,
+.contact-info,
+.contact-map {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #000; /* Fondo negro */
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact-form h3,
+.contact-info h3,
+.contact-map h3 {
+  margin-bottom: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff; /* Ajustar grosor del cuadro a 1px */
+  background-color: #000; /* Fondo negro */
+  color: #fff;
+}
+
+.contact-form button {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #ddd;
+}
+
+.contact-map iframe {
+  width: 100%; /* Ajusta el ancho para que sea responsivo */
+  max-width: 1200px; /* Máximo ancho para el mapa */
+  height: 350px; /* Altura del mapa */
+  border: 0; /* Sin borde */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 20px auto; /* Centra el mapa */
+  display: block; /* Asegura que sea un elemento de bloque */
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
+}
+.idiomas-container{
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 0;
+  position: relative;
+}
+
+/* Fondo exclusivo para la sección de idiomas */
+.languages-background {
+  background: url('/public/images/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(0.8) contrast(1.2) sepia(0.4) saturate(1.6) hue-rotate(-10deg);
+}
+
+/* Idiomas */
+.languages-section {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.idiomas-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.idiomas-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para las tarjetas de idioma */
+.idioma-card {
+  flex: 1;
+  border-radius: 1rem;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo similar al de proyectos */
+  color: #fff; /* Asegura que el texto no se vea afectado por el fondo */
+}
+
+
+.idioma-flag {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.idioma-name {
+  flex: 1;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.idioma-level {
+  background-color: #c7d409;
+  padding: 5px 10px;
+  color: #000000;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+}

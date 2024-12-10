@@ -1,0 +1,77 @@
+/* src/styles/ProjectLinux.css */
+
+.project-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('/public/images/Fondo2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'Comic Sans MS', cursive;
+}
+.galeria {
+    display: flex; /* Activa el modelo flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila si no hay espacio */
+    gap: 20px; /* Espaciado entre los elementos */
+    justify-content: center; /* Centra los elementos en el eje horizontal */
+}
+
+.galeria-item {
+    flex: 1 1 calc(33.333% - 40px); /* Toma un tercio del ancho disponible, considerando el margen */
+    margin: 10px;
+    height: auto; /* Ajusta la altura automáticamente */
+    overflow: hidden; /* Evita desbordamientos */
+    position: relative;
+    border-radius: 40%; /* Opcional: redondea las esquinas */
+}
+
+.galeria-item img {
+    width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* Mantendrá su proporción */
+    transition: transform 0.3s ease; /* Animación suave al agrandarse */
+}
+
+.galeria-item img:hover {
+    transform: scale(1.2); /* Agranda la imagen al pasar el mouse */
+}
+
+.project-background {
+filter: brightness(0.9) contrast(1.1);
+}
+
+.project-container {
+max-width: 1100px;
+margin: 50px auto;
+padding: 20px;
+background-color: rgba(0, 0, 0, 0.438);
+border-radius: 15px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+text-align: center;
+}
+
+.project-page h1 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.project-page p, .project-page ul {
+font-size: 1.2rem;
+line-height: 1.8;
+margin-bottom: 20px;
+}
+
+.project-page ul {
+list-style-type: none;
+padding: 0;
+}
+
+.project-page li {
+margin-bottom: 10px;
+padding: 10px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 8px;
+}
